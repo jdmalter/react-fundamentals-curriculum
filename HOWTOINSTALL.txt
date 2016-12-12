@@ -1,0 +1,84 @@
+On the terminal,
+npm init
+
+On the terminal,
+npm install --save react react-dom
+
+On the terminal,
+npm install --save-dev html-webpack-plugin webpack webpack-dev-server babel-core babel-loader babel-preset-react
+
+In new file app\index.html,
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <title>It works!</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   </head>
+
+   <body>
+      <div id="app"></div>
+   </body>
+
+</html>
+
+In new file app\index.js,
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var HelloWorld = React.createClass({
+   render: function () {
+      return (
+         <div>
+            Hello World!
+         </div>
+      )
+   }
+});
+
+ReactDOM.render(
+   <HelloWorld/>, document.getElementById('app'));
+
+In new file webpack.config.js,
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+   template: __dirname + '/app/index.html',
+   filename: 'index.html',
+   inject: 'body'
+})
+
+module.exports = {
+   entry: ['./app/index.js'],
+   output: {
+      path: __dirname + '/dist',
+      filename: 'index_bundle.js'
+   },
+   module: {
+      loaders: [
+         {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+         }
+      ]
+   },
+   plugins: [HtmlWebpackPluginConfig]
+}
+
+In new file .babelrc,
+{
+   "presets": ["react"]
+}
+
+In package.json,
+"scripts": {
+   "production": "webpack -p",
+   "start": "webpack-dev-server"
+}
+
+On the terminal,
+npm run start
+
+On your browser,
+http://localhost:8080/
