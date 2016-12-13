@@ -1,11 +1,9 @@
 On the terminal,
 npm init
 
-On the terminal,
-npm install --save react react-dom
+npm install --save react react-dom react-router react-addons-css-transition-group axios
 
-On the terminal,
-npm install --save-dev html-webpack-plugin webpack webpack-dev-server babel-core babel-loader babel-preset-react
+npm install --save-dev html-webpack-plugin webpack webpack-dev-server babel-core babel-loader babel-preset-react css-loader style-loader
 
 In new file app\index.html,
 <!DOCTYPE html>
@@ -60,6 +58,9 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader'
+         }, {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
          }
       ]
    },
@@ -82,3 +83,12 @@ npm run start
 
 On your browser,
 http://localhost:8080/
+
+Once you comfirm that React works, update app\index.js
+var React = require('react');
+var ReactDOM = require('react-dom');
+var routes = require('./config/routes');
+
+ReactDOM.render(routes, document.getElementById('app'));
+
+Also, change title in app\index.html, add app\config\routes.js, and create app\containers\Main.js

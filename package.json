@@ -1,32 +1,37 @@
 {
-   "name": "react-fundamentals-curriculum",
-   "version": "1.0.0",
-   "description": "Curriculum for React.js Program's React Fundamentals course.",
-   "main": "index.js",
-   "scripts": {
-      "production": "webpack -p",
-      "start": "webpack-dev-server"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/ReactjsProgram/react-fundamentals-curriculum.git"
-   },
-   "author": "Tyler McGinnis <tylermcginnis33@gmail.com> (http://tylermcginnis.com)",
-   "license": "ISC",
-   "bugs": {
-      "url": "https://github.com/ReactjsProgram/react-fundamentals-curriculum/issues"
-   },
-   "homepage": "https://github.com/ReactjsProgram/react-fundamentals-curriculum#readme",
-   "dependencies": {
-      "react": "^15.4.1",
-      "react-dom": "^15.4.1"
-   },
-   "devDependencies": {
-      "babel-core": "^6.20.0",
-      "babel-loader": "^6.2.9",
-      "babel-preset-react": "^6.16.0",
-      "html-webpack-plugin": "^2.24.1",
-      "webpack": "^1.14.0",
-      "webpack-dev-server": "^1.16.2"
-   }
+  "name": "react-fundamentals-curriculum",
+  "version": "1.0.0",
+  "description": "Curriculum for React.js Program's React Fundamentals course.",
+  "main": "index.js",
+  "scripts": {
+    "production": "webpack -p",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReactjsProgram/react-fundamentals-curriculum.git"
+  },
+  "author": "Tyler McGinnis <tylermcginnis33@gmail.com> (http://tylermcginnis.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReactjsProgram/react-fundamentals-curriculum/issues"
+  },
+  "homepage": "https://github.com/ReactjsProgram/react-fundamentals-curriculum#readme",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "react": "^15.4.1",
+    "react-addons-css-transition-group": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-router": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.24.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
 }
