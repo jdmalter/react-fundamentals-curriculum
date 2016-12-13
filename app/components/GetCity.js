@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 var space = {
-   marginTop: '10px'
+   margin: '10px'
 }
 
 function Button(props) {
@@ -14,7 +14,7 @@ function Button(props) {
 }
 
 function InputField(props) {
-   return (<input className='form-control' onChange={props.onUpdateCity} placeholder='Charlotte, North Carolina' type='text' value={props.city}/>)
+   return (<input className='form-control' onChange={props.onUpdateCity} placeholder='Charlotte, NC' type='text' value={props.city}/>)
 }
 
 function getStyles(props) {
