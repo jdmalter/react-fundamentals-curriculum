@@ -1,7 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var Loading = require('./Loading');
-var parseDate = require('../util/converter').parseDate;
 var DailyForecast = require('./DailyForecast');
 
 var styles = {
@@ -12,7 +11,7 @@ var styles = {
       flexDirection: 'row',
       flexWrap: 'wrap',
       maxWidth: 1200,
-      margin: '50px auto'
+      margin: '50px auto',
    },
    header: {
       fontSize: 65,

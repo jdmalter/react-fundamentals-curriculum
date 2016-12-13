@@ -26,8 +26,8 @@ function DailyForecast(props) {
    var icon = props.day.weather[0].icon;
    return (
       <div style={styles.dailyForecast} onClick={props.handleClick}>
-            <img style={styles.weatherIcon} src={'./app/images/weather-icons/' + icon + '.svg'} alt='Weather'/>
-            <h2 style={styles.subheader}>{date}</h2>
+         <img style={styles.weatherIcon} src={'./app/images/weather-icons/' + icon + '.svg'} alt='Weather'/>
+         <h2 style={styles.subheader}>{date}</h2>
       </div>
    )
 }
