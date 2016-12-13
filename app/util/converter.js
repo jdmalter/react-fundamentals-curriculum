@@ -35,7 +35,7 @@ function convertToCelsius(kelvin) {
 }
 
 function convertToFahrenheit(kelvin) {
-   return convertToCelsius(kelvin) * 1.8 + 32.0;
+   return convertToCelsius(kelvin) * 1.8000 + 32.0;
 }
 
 module.exports = {

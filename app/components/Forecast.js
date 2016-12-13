@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var Loading = require('./Loading');
 var parseDate = require('../util/converter').parseDate;
+var DailyForecast = require('./DailyForecast');
 
 var styles = {
    overallForecast: {
@@ -13,13 +14,6 @@ var styles = {
       maxWidth: 1200,
       margin: '50px auto'
    },
-   dailyForecast: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexDirection: 'column',
-      margin: 35
-   },
    header: {
       fontSize: 65,
       color: '#333',
@@ -30,21 +24,7 @@ var styles = {
       fontSize: 30,
       color: '#333',
       fontWeight: 100
-   },
-   weatherIcon: {
-      height: 130
    }
-}
-
-function DailyForecast(props) {
-   var date = parseDate(props.day.dt);
-   var icon = props.day.weather[0].icon;
-   return (
-      <div style={styles.dailyForecast}>
-         <img style={styles.weatherIcon} src={'./app/images/weather-icons/' + icon + '.svg'} alt='Weather'/>
-         <h2 style={styles.subheader}>{date}</h2>
-      </div>
-   )
 }
 
 function OverallForecast(props) {
@@ -53,7 +33,7 @@ function OverallForecast(props) {
          <h1 style={styles.header}>{props.city}</h1>
          <div style={styles.overallForecast}>
             {props.forecast.list.map(function (dailyForecast) {
-               return <DailyForecast key={dailyForecast.dt} day={dailyForecast}/>
+               return <DailyForecast key={dailyForecast.dt} day={dailyForecast} handleClick={props.handleClick.bind(null, dailyForecast)}/>
             })}
          </div>
       </div>
@@ -65,7 +45,7 @@ function Forecast(props) {
       <div>
          {props.isLoading
             ? <Loading/>
-            : <OverallForecast city={props.city} forecast={props.forecast}/>}
+            : <OverallForecast city={props.city} forecast={props.forecast} handleClick={props.handleClick}/>}
       </div>
    )
 }
@@ -73,7 +53,8 @@ function Forecast(props) {
 Forecast.propTypes = {
    city: PropTypes.string.isRequired,
    forecast: PropTypes.object.isRequired,
-   isLoading: PropTypes.bool.isRequired
+   isLoading: PropTypes.bool.isRequired,
+   handleClick: PropTypes.func.isRequired
 }
 
 module.exports = Forecast;
