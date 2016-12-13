@@ -9,8 +9,8 @@ var ForecastContainer = React.createClass({
    componentDidMount: function () {
       this.requestForecast(this.props.routeParams.city)
    },
-   componentWillReceiveProps: function (props) {
-      this.requestForecast(props.routeParams.city)
+   componentWillReceiveProps: function (nextProps) {
+      this.requestForecast(nextProps.routeParams.city)
    },
    requestForecast: function (city) {
       getForecast(city).then(function (forecast) {

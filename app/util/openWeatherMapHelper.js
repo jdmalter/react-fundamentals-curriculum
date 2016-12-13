@@ -4,7 +4,7 @@ var baseURL = 'http://api.openweathermap.org/data/2.5/';
 var APIKEY = '886f8ddfa6ab926a541707e532fee99d';
 
 function getQueryString(city) {
-   return {q: city, type: 'accurate', APPID: APIKEY, cnt: 5}
+   return {q: city, type: 'accurate', APPID: APIKEY, cnt: 7}
 }
 
 function getRouteParams(queryString) {
@@ -22,7 +22,7 @@ function getCurrentWeather(city) {
    var url = getUrl('weather', queryString);
 
    return axios.get(url).then(function (currentWeather) {
-      console.log(currentWeather.data)
+      return currentWeather.data
    }).catch(function (err) {
       console.warn('Error in getCurrentWeather', err)
    })
@@ -33,7 +33,7 @@ function getForecast(city) {
    var url = getUrl('forecast/daily', queryString);
 
    return axios.get(url).then(function (forecast) {
-      console.log(forecast.data)
+      return forecast.data
    }).catch(function (err) {
       console.warn('Error in getForecast', err)
    })

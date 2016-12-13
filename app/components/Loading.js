@@ -7,11 +7,12 @@ var styles = {
       right: 0,
       top: 0,
       bottom: 0,
-      fontSize: '55px'
+      fontSize: '65px'
    },
    content: {
       textAlign: 'center',
-      position: 'absolute',
+      color: '#333',
+      fontWeight: 100,
       width: '100%',
       marginTop: '30px'
    }
