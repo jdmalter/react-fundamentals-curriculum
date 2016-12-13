@@ -1,7 +1,7 @@
 var axios = require('axios');
 
 var baseURL = 'http://api.openweathermap.org/data/2.5/';
-var APIKEY = 'b714ec74bbab5650795063cb0fdf5fbe';
+var APIKEY = '886f8ddfa6ab926a541707e532fee99d';
 
 function getQueryString(city) {
    return {q: city, type: 'accurate', APPID: APIKEY, cnt: 5}
