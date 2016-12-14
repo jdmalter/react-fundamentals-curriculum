@@ -24,7 +24,7 @@ var Loading = React.createClass({
       speed: PropTypes.number
    },
    getDefaultProps: function () {
-      return {text: 'Loading', speed: 300}
+      return {text: 'Loading', speed: 500}
    },
    getInitialState: function () {
       this.originalText = this.props.text

@@ -25,6 +25,7 @@ function getCurrentWeather(city) {
       return currentWeather.data
    }).catch(function (err) {
       console.warn('Error in getCurrentWeather', err)
+      throw err
    })
 }
 
@@ -36,6 +37,7 @@ function getForecast(city) {
       return forecast.data
    }).catch(function (err) {
       console.warn('Error in getForecast', err)
+      throw err
    })
 }
 

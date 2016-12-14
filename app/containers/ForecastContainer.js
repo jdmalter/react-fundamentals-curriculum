@@ -17,7 +17,9 @@ var ForecastContainer = React.createClass({
    },
    requestForecast: function (city) {
       getForecast(city).then(function (forecast) {
-         this.setState({isLoading: false, forecast: forecast});
+         this.setState({isLoading: false, forecast: forecast})
+      }.bind(this)).catch(function (err) {
+         this.setState({isLoading: true, forecast: {}})
       }.bind(this))
    },
    handleClick: function (weather) {

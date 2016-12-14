@@ -11,7 +11,7 @@ var styles = {
       flexDirection: 'row',
       flexWrap: 'wrap',
       maxWidth: 1200,
-      margin: '50px auto',
+      margin: '50px auto'
    },
    header: {
       fontSize: 65,
